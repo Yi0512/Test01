@@ -1,0 +1,43 @@
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# PaddleClas output
+output/
+*.log
+*.txt
+
+# Dataset (不提交数据集)
+dataset/train/
+dataset/val/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# pip
+*.egg-info/
+dist/
+build/
+
+# VisualDL
+visualdl_logs/
