@@ -1,0 +1,49 @@
+# Global config
+Global:
+  output_dir: './output'
+  device: 'gpu'  # 改为 'cpu' 如果没有GPU
+  save_interval: 1
+  eval_interval: 1
+  epochs: 20
+  print_batch_step: 5
+  use_visualdl: True
+  seed: 2022
+
+# DataLoader config
+DataLoader:
+  Train:
+    dataset:
+      name: ImageNetDataset
+      image_root: './dataset/train'
+      cls_label_path: null
+    batch_size: 16
+    num_workers: 2
+    
+  Eval:
+    dataset:
+      name: ImageNetDataset
+      image_root: './dataset/val'
+      cls_label_path: null
+    batch_size: 16
+
+# Architecture
+Arch:
+  name: MobileNetV3_small_x1_0
+
+# Optimizer
+Optimizer:
+  name: Momentum
+  momentum: 0.9
+  lr:
+    name: Cosine
+    learning_rate: 0.01
+    warmup_epochs: 2
+
+# Loss
+Loss:
+  Train:
+    - CELoss:
+        weight: 1.0
+
+# Class number
+CLASS_NUM: 3
